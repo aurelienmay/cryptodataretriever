@@ -72,8 +72,7 @@ if uploaded_file is not None:
                     data[coin_to_get['Ticker']] = api.get_crypto_data(crypto_id)
                     print("No match found for", coin_to_get['Ticker'])
 
-        with open('final.json', 'w') as f:
-            json.dump(data, f, indent=4)
+        st.json(data)
 
     except Exception as ex:
         traceback.print_exc()
